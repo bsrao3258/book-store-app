@@ -8,6 +8,11 @@ pipeline {
     }
 
     stages {
+        stage('Checkout') {
+            steps {
+                git url: 'https://github.com/bsrao3258/book-store-app.git', credentialsId: 'ssh private'
+            }
+        }
         stage('Build') {
             steps {
                 script {
